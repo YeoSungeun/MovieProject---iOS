@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     let subView = UIView()
     let risingContentLabel = UILabel()
     
+    let posterStackView = UIStackView()
+    
     let subFirstView = UIView()
     let subSecondView = UIView()
     let subThirdView = UIView()
@@ -38,6 +40,7 @@ class HomeViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,9 +62,12 @@ class HomeViewController: UIViewController {
         
         view.addSubview(subView)
         subView.addSubview(risingContentLabel)
-        subView.addSubview(subFirstView)
-        subView.addSubview(subSecondView)
-        subView.addSubview(subThirdView)
+        subView.addSubview(posterStackView)
+        
+        
+        posterStackView.addArrangedSubview(subFirstView)
+        posterStackView.addArrangedSubview(subSecondView)
+        posterStackView.addArrangedSubview(subThirdView)
         
         subFirstView.addSubview(subFirstPosterImageView)
         subFirstView.addSubview(firstTop10ImageView)
@@ -71,6 +77,7 @@ class HomeViewController: UIViewController {
         
         subThirdView.addSubview(subThirdPosterImageView)
         subThirdView.addSubview(thirdTop10ImageView)
+
         
     }
     func configureLayout() {
@@ -78,7 +85,7 @@ class HomeViewController: UIViewController {
         mainView.snp.makeConstraints { make in
             make.top.equalTo(safeArea)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(480)
+            make.height.equalTo(440)
         }
         mainPosterImageView.snp.makeConstraints { make in
             make.top.equalTo(mainView.snp.top).offset(16)
@@ -95,16 +102,58 @@ class HomeViewController: UIViewController {
             make.trailing.equalTo(mainPosterImageView).offset(-40)
             make.top.equalTo(playButton.snp.top)
             make.height.equalTo(28)
-            
-            
         }
         
+        subView.snp.makeConstraints { make in
+            make.top.equalTo(mainView.snp.bottom)
+            make.horizontalEdges.bottom.equalTo(safeArea)
+        }
+        risingContentLabel.snp.makeConstraints { make in
+            make.top.equalTo(subView.snp.top).offset(8)
+            make.leading.equalTo(subView.snp.leading).offset(16)
+            make.height.equalTo(28)
+        }
+        posterStackView.snp.makeConstraints { make in
+            make.top.equalTo(risingContentLabel.snp.bottom).offset(8)
+            make.horizontalEdges.equalTo(safeArea).inset(16)
+            make.bottom.equalTo(safeArea).offset(-8)
+        }
+        subFirstPosterImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        subSecondPosterImgaeView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        subThirdPosterImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        firstTop10ImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(30)
+        }
+        secondTop10ImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(30)
+        }
+        thirdTop10ImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(30)
+        }
     }
     func configureUI() {
-        setDummyImage(view: mainPosterImageView)
-        setDummyImage(view: subFirstPosterImageView)
-        setDummyImage(view: subSecondPosterImgaeView)
-        setDummyImage(view: subThirdPosterImageView)
+        setDummyImage(view: mainPosterImageView, index: 1)
+        setDummyImage(view: subFirstPosterImageView, index: 2)
+        setDummyImage(view: subSecondPosterImgaeView, index: 3)
+        setDummyImage(view: subThirdPosterImageView, index: 4)
+        setTop10Image(view: firstTop10ImageView)
+        setTop10Image(view: secondTop10ImageView)
+        setTop10Image(view: thirdTop10ImageView)
         
         view.backgroundColor = .black
         mainView.backgroundColor = .darkGray.withAlphaComponent(0.3)
@@ -112,6 +161,7 @@ class HomeViewController: UIViewController {
         
         playButton.setImage(UIImage.playNormal, for: .normal)
         playButton.setImage(UIImage.playHighlighted, for: .highlighted)
+        playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
         
         likeButton.setTitleColor(.lightGray, for: .normal)
         likeButton.backgroundColor = .darkGray
@@ -122,14 +172,41 @@ class HomeViewController: UIViewController {
         
         risingContentLabel.text = "지금 뜨는 콘텐츠"
         risingContentLabel.textColor = .white
+        
+        configureStackView(stackView: posterStackView)
+        
     }
     
-    func setDummyImage(view: UIImageView) {
-        view.image = UIImage(named: movies[0])
+    func setDummyImage(view: UIImageView, index: Int) {
+        view.image = UIImage(named: movies[index])
         view.contentMode = .scaleToFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 5
                              
+    }
+    func setTop10Image(view: UIImageView){
+        view.image = UIImage.top10Badge
+        view.contentMode = .scaleToFill
+        view.isHidden = (Int.random(in: 0...1) != 0) ? true : false
+    }
+    func configureStackView(stackView: UIStackView){
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8
+        
+    }
+    @objc func playButtonClicked() {
+        print(#function)
+        movies.shuffle()
+        setDummyImage(view: mainPosterImageView, index: 1)
+        setDummyImage(view: subFirstPosterImageView, index: 2)
+        setDummyImage(view: subSecondPosterImgaeView, index: 3)
+        setDummyImage(view: subThirdPosterImageView, index: 4)
+        
+        setTop10Image(view: firstTop10ImageView)
+        setTop10Image(view: secondTop10ImageView)
+        setTop10Image(view: thirdTop10ImageView)
     }
 
 
