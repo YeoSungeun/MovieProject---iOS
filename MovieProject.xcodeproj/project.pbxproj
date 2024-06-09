@@ -21,6 +21,8 @@
 		A0EE56BA2C1515E700A5E53B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56B92C1515E700A5E53B /* SnapKit */; };
 		A0EE56BD2C1515EF00A5E53B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56BC2C1515EF00A5E53B /* Alamofire */; };
 		A0EE56BF2C15F5E300A5E53B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */; };
+		A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */; };
+		A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		A0EE56B42C15143900A5E53B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A0EE56B62C15148B00A5E53B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
+		A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,10 @@
 				A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */,
 				A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */,
 				A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */,
+				A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */,
 				A0EE56B62C15148B00A5E53B /* APIKey.swift */,
 				A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */,
+				A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */,
 			);
 			path = MovieProject;
 			sourceTree = "<group>";
@@ -169,11 +175,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */,
+				A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */,
 				A0DA1F462C0F5DEE0081D0A9 /* NewHotViewController.swift in Sources */,
 				A0EE56B72C15148B00A5E53B /* APIKey.swift in Sources */,
 				A0DA1F322C0F4B110081D0A9 /* ViewController.swift in Sources */,
 				A0EE56B32C15125A00A5E53B /* BoxOfficeViewController.swift in Sources */,
 				A0DA1F2E2C0F4B110081D0A9 /* AppDelegate.swift in Sources */,
+				A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */,
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,
 				A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */,
 				A0EE56BF2C15F5E300A5E53B /* Date+Extension.swift in Sources */,
