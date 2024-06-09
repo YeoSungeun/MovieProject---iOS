@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let firstViewController = UINavigationController(rootViewController: HomeViewController())
-        let secondViewController = UINavigationController(rootViewController: NewHotViewController())
+        let secondViewController = UINavigationController(rootViewController: BoxOfficeViewController())
         let thirdViewController = UINavigationController(rootViewController: SignUpViewController())
         
         let tabBarController = UITabBarController()
@@ -29,10 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[0].image = UIImage(systemName: "house")
             items[0].title = "홈"
             
-            items[1].selectedImage = UIImage(systemName: "play.rectangle.on.rectangle.fill")
-            items[1].image = UIImage(systemName: "play.rectangle.on.rectangle")
-            items[1].title = "NEW & HOT"
-            
+            items[1].selectedImage = UIImage(systemName: "list.bullet.circle.fill")
+            items[1].image = UIImage(systemName: "list.bullet.circle")
+                        
             items[2].selectedImage = UIImage(systemName: "person.fill")
             items[2].image = UIImage(systemName: "person")
             items[2].title = "회원가입"

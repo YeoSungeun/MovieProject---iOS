@@ -15,8 +15,11 @@
 		A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F412C0F4CFB0081D0A9 /* SignUpViewController.swift */; };
 		A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */; };
 		A0DA1F462C0F5DEE0081D0A9 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */; };
-		A0DA1F492C0F63DB0081D0A9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A0DA1F482C0F63DB0081D0A9 /* Alamofire */; };
-		A0DA1F4C2C0F63E30081D0A9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0DA1F4B2C0F63E30081D0A9 /* SnapKit */; };
+		A0EE56B32C15125A00A5E53B /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */; };
+		A0EE56B52C15143900A5E53B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A0EE56B42C15143900A5E53B /* .gitignore */; };
+		A0EE56B72C15148B00A5E53B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56B62C15148B00A5E53B /* APIKey.swift */; };
+		A0EE56BA2C1515E700A5E53B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56B92C1515E700A5E53B /* SnapKit */; };
+		A0EE56BD2C1515EF00A5E53B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56BC2C1515EF00A5E53B /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		A0DA1F412C0F4CFB0081D0A9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
+		A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
+		A0EE56B42C15143900A5E53B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A0EE56B62C15148B00A5E53B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0DA1F492C0F63DB0081D0A9 /* Alamofire in Frameworks */,
-				A0DA1F4C2C0F63E30081D0A9 /* SnapKit in Frameworks */,
+				A0EE56BA2C1515E700A5E53B /* SnapKit in Frameworks */,
+				A0EE56BD2C1515EF00A5E53B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +54,7 @@
 		A0DA1F212C0F4B110081D0A9 = {
 			isa = PBXGroup;
 			children = (
+				A0EE56B42C15143900A5E53B /* .gitignore */,
 				A0DA1F2C2C0F4B110081D0A9 /* MovieProject */,
 				A0DA1F2B2C0F4B110081D0A9 /* Products */,
 			);
@@ -73,6 +80,8 @@
 				A0DA1F412C0F4CFB0081D0A9 /* SignUpViewController.swift */,
 				A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */,
 				A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */,
+				A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */,
+				A0EE56B62C15148B00A5E53B /* APIKey.swift */,
 			);
 			path = MovieProject;
 			sourceTree = "<group>";
@@ -94,8 +103,8 @@
 			);
 			name = MovieProject;
 			packageProductDependencies = (
-				A0DA1F482C0F63DB0081D0A9 /* Alamofire */,
-				A0DA1F4B2C0F63E30081D0A9 /* SnapKit */,
+				A0EE56B92C1515E700A5E53B /* SnapKit */,
+				A0EE56BC2C1515EF00A5E53B /* Alamofire */,
 			);
 			productName = MovieProject;
 			productReference = A0DA1F2A2C0F4B110081D0A9 /* MovieProject.app */;
@@ -126,8 +135,8 @@
 			);
 			mainGroup = A0DA1F212C0F4B110081D0A9;
 			packageReferences = (
-				A0DA1F472C0F63DB0081D0A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				A0DA1F4A2C0F63E30081D0A9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A0EE56B82C1515E700A5E53B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A0EE56BB2C1515EF00A5E53B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A0DA1F2B2C0F4B110081D0A9 /* Products */;
 			projectDirPath = "";
@@ -144,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DA1F372C0F4B130081D0A9 /* Assets.xcassets in Resources */,
+				A0EE56B52C15143900A5E53B /* .gitignore in Resources */,
 				A0DA1F3A2C0F4B130081D0A9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +167,9 @@
 			files = (
 				A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */,
 				A0DA1F462C0F5DEE0081D0A9 /* NewHotViewController.swift in Sources */,
+				A0EE56B72C15148B00A5E53B /* APIKey.swift in Sources */,
 				A0DA1F322C0F4B110081D0A9 /* ViewController.swift in Sources */,
+				A0EE56B32C15125A00A5E53B /* BoxOfficeViewController.swift in Sources */,
 				A0DA1F2E2C0F4B110081D0A9 /* AppDelegate.swift in Sources */,
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,
 				A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */,
@@ -385,15 +397,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A0DA1F472C0F63DB0081D0A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-		A0DA1F4A2C0F63E30081D0A9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		A0EE56B82C1515E700A5E53B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -401,18 +405,26 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		A0EE56BB2C1515EF00A5E53B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A0DA1F482C0F63DB0081D0A9 /* Alamofire */ = {
+		A0EE56B92C1515E700A5E53B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A0DA1F472C0F63DB0081D0A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		A0DA1F4B2C0F63E30081D0A9 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A0DA1F4A2C0F63E30081D0A9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = A0EE56B82C1515E700A5E53B /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		A0EE56BC2C1515EF00A5E53B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0EE56BB2C1515EF00A5E53B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
