@@ -51,7 +51,7 @@ class BoxOfficeTableViewCell: UITableViewCell {
     func configureUI() {
         contentView.backgroundColor = .black
         
-        rankLabel.backgroundColor = .white
+        
         rankLabel.font = .boldSystemFont(ofSize: 17)
         rankLabel.textAlignment = .center
         
@@ -66,6 +66,7 @@ class BoxOfficeTableViewCell: UITableViewCell {
 
     func configureCell(data: DailyBoxOfficeList) {
         rankLabel.text = data.rank
+        rankLabel.backgroundColor = (rankLabel.text != "") ? .white : .clear
         movieNmLabel.text = data.movieNm
         opendDtLabel.text = data.openDt
     }

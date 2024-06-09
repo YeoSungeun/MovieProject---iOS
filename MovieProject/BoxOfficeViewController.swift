@@ -52,9 +52,12 @@ class BoxOfficeViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 self.list = value.boxOfficeResult.dailyBoxOfficeList
+                self.dateSearchTextField.text = date
                 self.tableView.reloadData()
             case .failure(let error):
                 print("\(error)")
+                self.list = [DailyBoxOfficeList(movieNm: "형식에 맞춰 날짜를 입력해주세요.", openDt: "", rank: "")]
+                self.tableView.reloadData()
             }
         }
     }
@@ -66,12 +69,53 @@ class BoxOfficeViewController: UIViewController {
         view.addSubview(tableView)
     }
     func configureLayout() {
+        dateSearchTextField.snp.makeConstraints { make in
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.height.equalTo(44)
+        }
+        dateSearchButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(4)
+            make.leading.equalTo(dateSearchTextField.snp.trailing).offset(16)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(60)
+            make.width.equalTo(80)
+        }
+        textFieldUnderline.snp.makeConstraints { make in
+            make.top.equalTo(dateSearchTextField.snp.bottom).offset(4)
+            make.width.equalTo(dateSearchTextField.snp.width)
+            make.leading.equalTo(dateSearchTextField.snp.leading)
+            make.bottom.equalTo(dateSearchButton.snp.bottom)
+            make.height.equalTo(4)
+        }
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(textFieldUnderline.snp.bottom).offset(20)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     func configureUI() {
         view.backgroundColor = .black
+  
+        dateSearchTextField.attributedPlaceholder = NSAttributedString(string: "날짜를 입력하세요 ex)20240612", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.8)])
+        dateSearchTextField.textColor = .white
+        dateSearchTextField.font = .systemFont(ofSize: 15)
+        dateSearchTextField.borderStyle = .none
+        dateSearchTextField.backgroundColor = .clear
+        dateSearchTextField.keyboardType = .numberPad
+        
+        dateSearchButton.setTitle("검색", for: .normal)
+        dateSearchButton.setTitleColor( .black, for: .normal)
+        dateSearchButton.backgroundColor = .white
+        dateSearchButton.titleLabel?.font = .systemFont(ofSize: 16)
+        dateSearchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside)
+        
+        textFieldUnderline.backgroundColor = .white
+        
+    }
+    
+    @objc func searchButtonClicked() {
+        if let date = dateSearchTextField.text, !date.isEmpty {
+            callResponse(date: date)
+        }
     }
 
 }
@@ -102,3 +146,4 @@ extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
