@@ -34,7 +34,7 @@ class BoxOfficeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        callResponse(date: "20240112")
+        callResponse(date: Date.boxofficeDate())
     }
     
     func callResponse(date: String) {
