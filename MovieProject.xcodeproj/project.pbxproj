@@ -23,6 +23,10 @@
 		A0EE56BF2C15F5E300A5E53B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */; };
 		A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */; };
 		A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */; };
+		A0EE56CD2C17574300A5E53B /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56CC2C17574300A5E53B /* TrendViewController.swift */; };
+		A0EE56CF2C1758A100A5E53B /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56CE2C1758A100A5E53B /* Trend.swift */; };
+		A0EE56D12C17CB6800A5E53B /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */; };
+		A0EE56D32C17CC6800A5E53B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		A0EE56CC2C17574300A5E53B /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		A0EE56CE2C1758A100A5E53B /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
+		A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +94,41 @@
 				A0DA1F412C0F4CFB0081D0A9 /* SignUpViewController.swift */,
 				A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */,
 				A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */,
-				A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */,
-				A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */,
+				A0EE56C92C174C9900A5E53B /* BoxOffice */,
+				A0EE56CA2C174CA900A5E53B /* Trend */,
+				A0EE56CB2C174CC900A5E53B /* Credit */,
 				A0EE56B62C15148B00A5E53B /* APIKey.swift */,
 				A0EE56BE2C15F5E300A5E53B /* Date+Extension.swift */,
 				A0EE56C22C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift */,
+				A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */,
 			);
 			path = MovieProject;
+			sourceTree = "<group>";
+		};
+		A0EE56C92C174C9900A5E53B /* BoxOffice */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE56B22C15125A00A5E53B /* BoxOfficeViewController.swift */,
+				A0EE56C02C15FDD700A5E53B /* BoxOfficeTableViewCell.swift */,
+			);
+			path = BoxOffice;
+			sourceTree = "<group>";
+		};
+		A0EE56CA2C174CA900A5E53B /* Trend */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE56CC2C17574300A5E53B /* TrendViewController.swift */,
+				A0EE56CE2C1758A100A5E53B /* Trend.swift */,
+				A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */,
+			);
+			path = Trend;
+			sourceTree = "<group>";
+		};
+		A0EE56CB2C174CC900A5E53B /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Credit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,13 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EE56D32C17CC6800A5E53B /* UIImageView+Extension.swift in Sources */,
 				A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */,
 				A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */,
 				A0DA1F462C0F5DEE0081D0A9 /* NewHotViewController.swift in Sources */,
 				A0EE56B72C15148B00A5E53B /* APIKey.swift in Sources */,
+				A0EE56CF2C1758A100A5E53B /* Trend.swift in Sources */,
+				A0EE56CD2C17574300A5E53B /* TrendViewController.swift in Sources */,
 				A0DA1F322C0F4B110081D0A9 /* ViewController.swift in Sources */,
 				A0EE56B32C15125A00A5E53B /* BoxOfficeViewController.swift in Sources */,
 				A0DA1F2E2C0F4B110081D0A9 /* AppDelegate.swift in Sources */,
+				A0EE56D12C17CB6800A5E53B /* TrendTableViewCell.swift in Sources */,
 				A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */,
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,
 				A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */,

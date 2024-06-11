@@ -20,9 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstViewController = UINavigationController(rootViewController: HomeViewController())
         let secondViewController = UINavigationController(rootViewController: BoxOfficeViewController())
         let thirdViewController = UINavigationController(rootViewController: SignUpViewController())
+        let fourthViewController = UINavigationController(rootViewController: TrendViewController())
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController], animated: true)
+        tabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController, fourthViewController], animated: true)
     
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
@@ -35,6 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[2].selectedImage = UIImage(systemName: "person.fill")
             items[2].image = UIImage(systemName: "person")
             items[2].title = "회원가입"
+            
+            items[3].title = "Trend"
         }
         tabBarController.tabBar.tintColor = .white
         
