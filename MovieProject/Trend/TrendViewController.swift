@@ -14,7 +14,7 @@ class TrendViewController: UIViewController {
     
     var tableView = UITableView()
     
-    lazy var genreList: [Int:String] = [:]
+    static var genreList: [Int:String] = [:]
     var trendList: [TrendResult] = []
 
     override func viewDidLoad() {
@@ -24,16 +24,20 @@ class TrendViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        configureTableView()
     }
     
     func configureHierarchy() {
         view.addSubview(tableView)
     }
     func configureLayout() {
-        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     func configureUI() {
-        
+        view.backgroundColor = .white
+        tableView.backgroundColor = .white
     }
     
     func callRequestGenre() {
@@ -43,9 +47,9 @@ class TrendViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 for item in value.genres {
-                    self.genreList.updateValue(item.name, forKey: item.id)
+                    TrendViewController.genreList.updateValue(item.name, forKey: item.id)
                 }
-                print(self.genreList)
+                print(TrendViewController.genreList)
             case .failure(let error):
                 print(error)
             }
@@ -61,6 +65,7 @@ class TrendViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 self.trendList = value.results
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -79,10 +84,19 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier, for: indexPath) as! TrendTableViewCell
+        
+        cell.configureCell(data: trendList[indexPath.row])
+        
+        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return 440
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CreditViewController()
+        vc.data = trendList[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

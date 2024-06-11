@@ -27,6 +27,8 @@
 		A0EE56CF2C1758A100A5E53B /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56CE2C1758A100A5E53B /* Trend.swift */; };
 		A0EE56D12C17CB6800A5E53B /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */; };
 		A0EE56D32C17CC6800A5E53B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */; };
+		A0EE56E02C18389900A5E53B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56DF2C18389900A5E53B /* Kingfisher */; };
+		A0EE56E22C18D5F800A5E53B /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,7 @@
 		A0EE56CE2C1758A100A5E53B /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EE56E02C18389900A5E53B /* Kingfisher in Frameworks */,
 				A0EE56BA2C1515E700A5E53B /* SnapKit in Frameworks */,
 				A0EE56BD2C1515EF00A5E53B /* Alamofire in Frameworks */,
 			);
@@ -127,6 +131,7 @@
 		A0EE56CB2C174CC900A5E53B /* Credit */ = {
 			isa = PBXGroup;
 			children = (
+				A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */,
 			);
 			path = Credit;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			packageProductDependencies = (
 				A0EE56B92C1515E700A5E53B /* SnapKit */,
 				A0EE56BC2C1515EF00A5E53B /* Alamofire */,
+				A0EE56DF2C18389900A5E53B /* Kingfisher */,
 			);
 			productName = MovieProject;
 			productReference = A0DA1F2A2C0F4B110081D0A9 /* MovieProject.app */;
@@ -182,6 +188,7 @@
 			packageReferences = (
 				A0EE56B82C1515E700A5E53B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A0EE56BB2C1515EF00A5E53B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A0EE56DE2C18389900A5E53B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A0DA1F2B2C0F4B110081D0A9 /* Products */;
 			projectDirPath = "";
@@ -225,6 +232,7 @@
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,
 				A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */,
 				A0EE56BF2C15F5E300A5E53B /* Date+Extension.swift in Sources */,
+				A0EE56E22C18D5F800A5E53B /* CreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +473,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		A0EE56DE2C18389900A5E53B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +493,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0EE56BB2C1515EF00A5E53B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A0EE56DF2C18389900A5E53B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0EE56DE2C18389900A5E53B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

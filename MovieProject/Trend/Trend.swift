@@ -36,7 +36,7 @@ struct TrendResult: Decodable {
     var voteAverageFormat: String {
         return String(format: "%.1f", vote_average)
     }
-    var releas_date_string: String {
+    var release_date_string: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: release_date) // Date로 변환
@@ -46,6 +46,7 @@ struct TrendResult: Decodable {
 
         return dateString
     }
+
 }
 
 // MARK: - Genres
