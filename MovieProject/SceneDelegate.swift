@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let firstViewController = UINavigationController(rootViewController: HomeViewController())
         let secondViewController = UINavigationController(rootViewController: BoxOfficeViewController())
-        let thirdViewController = UINavigationController(rootViewController: SignUpViewController())
+        let thirdViewController = UINavigationController(rootViewController: SearchMovieViewController())
         let fourthViewController = UINavigationController(rootViewController: TrendViewController())
         
         let tabBarController = UITabBarController()
@@ -33,9 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[1].selectedImage = UIImage(systemName: "list.bullet.circle.fill")
             items[1].image = UIImage(systemName: "list.bullet.circle")
                         
-            items[2].selectedImage = UIImage(systemName: "person.fill")
-            items[2].image = UIImage(systemName: "person")
-            items[2].title = "회원가입"
+            items[2].selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
+            items[2].image = UIImage(systemName: "magnifyingglass.circle")
+            items[2].title = "검색"
             
             items[3].title = "Trend"
         }

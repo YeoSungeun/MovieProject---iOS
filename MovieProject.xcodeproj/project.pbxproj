@@ -29,6 +29,9 @@
 		A0EE56D32C17CC6800A5E53B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */; };
 		A0EE56E02C18389900A5E53B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A0EE56DF2C18389900A5E53B /* Kingfisher */; };
 		A0EE56E22C18D5F800A5E53B /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */; };
+		A0EE56E52C18ED0000A5E53B /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56E42C18ECFF00A5E53B /* SearchMovieViewController.swift */; };
+		A0EE56E72C18FB8200A5E53B /* SearchMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56E62C18FB8200A5E53B /* SearchMovie.swift */; };
+		A0EE56E92C19033300A5E53B /* SearchMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE56E82C19033300A5E53B /* SearchMovieCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		A0EE56D22C17CC6800A5E53B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		A0EE56E42C18ECFF00A5E53B /* SearchMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewController.swift; sourceTree = "<group>"; };
+		A0EE56E62C18FB8200A5E53B /* SearchMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovie.swift; sourceTree = "<group>"; };
+		A0EE56E82C19033300A5E53B /* SearchMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 				A0DA1F432C0F4D0E0081D0A9 /* HomeViewController.swift */,
 				A0DA1F452C0F5DEE0081D0A9 /* NewHotViewController.swift */,
 				A0EE56C92C174C9900A5E53B /* BoxOffice */,
+				A0EE56E32C18ECEA00A5E53B /* SearchMovie */,
 				A0EE56CA2C174CA900A5E53B /* Trend */,
 				A0EE56CB2C174CC900A5E53B /* Credit */,
 				A0EE56B62C15148B00A5E53B /* APIKey.swift */,
@@ -134,6 +141,16 @@
 				A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */,
 			);
 			path = Credit;
+			sourceTree = "<group>";
+		};
+		A0EE56E32C18ECEA00A5E53B /* SearchMovie */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE56E62C18FB8200A5E53B /* SearchMovie.swift */,
+				A0EE56E42C18ECFF00A5E53B /* SearchMovieViewController.swift */,
+				A0EE56E82C19033300A5E53B /* SearchMovieCollectionViewCell.swift */,
+			);
+			path = SearchMovie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +236,9 @@
 			files = (
 				A0EE56D32C17CC6800A5E53B /* UIImageView+Extension.swift in Sources */,
 				A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */,
+				A0EE56E72C18FB8200A5E53B /* SearchMovie.swift in Sources */,
 				A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */,
+				A0EE56E92C19033300A5E53B /* SearchMovieCollectionViewCell.swift in Sources */,
 				A0DA1F462C0F5DEE0081D0A9 /* NewHotViewController.swift in Sources */,
 				A0EE56B72C15148B00A5E53B /* APIKey.swift in Sources */,
 				A0EE56CF2C1758A100A5E53B /* Trend.swift in Sources */,
@@ -227,6 +246,7 @@
 				A0DA1F322C0F4B110081D0A9 /* ViewController.swift in Sources */,
 				A0EE56B32C15125A00A5E53B /* BoxOfficeViewController.swift in Sources */,
 				A0DA1F2E2C0F4B110081D0A9 /* AppDelegate.swift in Sources */,
+				A0EE56E52C18ED0000A5E53B /* SearchMovieViewController.swift in Sources */,
 				A0EE56D12C17CB6800A5E53B /* TrendTableViewCell.swift in Sources */,
 				A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */,
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,

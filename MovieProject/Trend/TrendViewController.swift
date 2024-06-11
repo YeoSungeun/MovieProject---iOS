@@ -25,8 +25,12 @@ class TrendViewController: UIViewController {
         configureLayout()
         configureUI()
         configureTableView()
+        
+
     }
-    
+    @objc func searchButtonClicked(){
+        navigationController?.pushViewController(SearchMovieViewController(), animated: false)
+    }
     func configureHierarchy() {
         view.addSubview(tableView)
     }
@@ -38,6 +42,9 @@ class TrendViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .white
         tableView.backgroundColor = .white
+        
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonClicked))
+        navigationItem.rightBarButtonItem = rightItem
     }
     
     func callRequestGenre() {
