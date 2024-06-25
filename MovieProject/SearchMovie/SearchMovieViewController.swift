@@ -124,6 +124,13 @@ extension SearchMovieViewController: UICollectionViewDelegate, UICollectionViewD
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(#function)
+        let vc = RecommendViewController()
+        vc.id = list.results[indexPath.item].id
+        vc.movieTitle = list.results[indexPath.item].title
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 
@@ -133,7 +140,7 @@ extension SearchMovieViewController: UICollectionViewDataSourcePrefetching {
         
         for item in indexPaths {
             if list.results.count - 2 == item.item && list.total_pages != self.page {
-                print("item:\(item.item)")
+                print("count:\(list.results.count - 2)item:\(item.item)",#function)
                 page += 1
                 guard let text = searchBar.text else { return }
                 callRequest(query: text)
