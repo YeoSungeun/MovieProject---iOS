@@ -12,14 +12,14 @@ import SnapKit
 class SearchMovieViewController: UIViewController {
     
     let searchBar = UISearchBar()
+    let resultLabel = UILabel()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
-    var list: SearchMovie = SearchMovie(page: 0, total_pages: 0, total_results: 0, results: [])
+    var list: SearchMovie = SearchMovie(page: 1, total_pages: 1, total_results: 0, results: [])
     var page = 1
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -29,6 +29,7 @@ class SearchMovieViewController: UIViewController {
     func configureHierarchy() {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(resultLabel)
     }
     func configureLayout() {
         searchBar.snp.makeConstraints { make in
@@ -39,6 +40,10 @@ class SearchMovieViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom)
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        resultLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.equalTo(40)
         }
     }
     func configureUI() {
@@ -55,6 +60,13 @@ class SearchMovieViewController: UIViewController {
         searchBar.searchTextField.textColor = .white
         
         collectionView.backgroundColor = .black
+        
+        resultLabel.text = "검색결과가 없습니다."
+        resultLabel.textAlignment = .center
+        resultLabel.textColor = .white
+        resultLabel.font = .boldSystemFont(ofSize: 17)
+        resultLabel.isHidden = true
+        
         
     }
     func configureView() {
@@ -82,11 +94,19 @@ class SearchMovieViewController: UIViewController {
     
     func callRequest(query: String) {
         let url = "https://api.themoviedb.org/3/search/movie?api_key=\(APIKey.tmdbKey)&query=\(query)&page=\(page)"
-
+        
         AF.request(url).responseDecodable(of: SearchMovie.self) { response in
             switch response.result {
             case .success(let value):
                 print("page\(value.page), totalpage: \(value.total_pages), totalresult: \(value.total_results)")
+                guard value.total_results != 0  else {
+                    self.resultLabel.isHidden = false
+                    self.list = value
+                    self.collectionView.reloadData()
+                    return
+                }
+                self.resultLabel.isHidden = true
+                
                 if self.page == 1 {
                     self.list = value
                 } else {

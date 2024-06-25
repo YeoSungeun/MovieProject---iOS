@@ -17,28 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let firstViewController = UINavigationController(rootViewController: HomeViewController())
-        let secondViewController = UINavigationController(rootViewController: BoxOfficeViewController())
-        let thirdViewController = UINavigationController(rootViewController: SearchMovieViewController())
-        let fourthViewController = UINavigationController(rootViewController: TrendViewController())
+        let firstViewController = UINavigationController(rootViewController: TrendViewController())
+        let secondViewController = UINavigationController(rootViewController: SearchMovieViewController())
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController, fourthViewController], animated: true)
+        tabBarController.setViewControllers([firstViewController, secondViewController], animated: true)
     
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
             items[0].image = UIImage(systemName: "house")
-            items[0].title = "홈"
-            
-            items[1].selectedImage = UIImage(systemName: "list.bullet.circle.fill")
-            items[1].image = UIImage(systemName: "list.bullet.circle")
+            items[0].title = "Trend"
                         
-            items[2].selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
-            items[2].image = UIImage(systemName: "magnifyingglass.circle")
-            items[2].title = "검색"
-            
-            items[3].title = "Trend"
+            items[1].selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
+            items[1].image = UIImage(systemName: "magnifyingglass.circle")
+            items[1].title = "검색"
         }
+        
         tabBarController.tabBar.tintColor = .white
         
         window?.rootViewController = tabBarController

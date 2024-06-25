@@ -14,6 +14,6 @@ struct Movie: Decodable {
 struct MovieResult: Decodable {
     var id: Int
     var title: String
-    var poster_path: String
+    var poster_path: String?
     
 }
