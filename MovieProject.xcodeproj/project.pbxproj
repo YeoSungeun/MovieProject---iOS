@@ -13,6 +13,8 @@
 		A0D27CFA2C2AB55800FE5ABE /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CF92C2AB55800FE5ABE /* RecommendTableViewCell.swift */; };
 		A0D27CFC2C2AB57000FE5ABE /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CFB2C2AB57000FE5ABE /* RecommendCollectionViewCell.swift */; };
 		A0D27CFE2C2B1FC500FE5ABE /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CFD2C2B1FC500FE5ABE /* Poster.swift */; };
+		A0D27D062C2C580100FE5ABE /* TMDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27D052C2C580100FE5ABE /* TMDBRequest.swift */; };
+		A0D27D082C2C6EDE00FE5ABE /* TrendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27D072C2C6EDE00FE5ABE /* TrendManager.swift */; };
 		A0DA1F2E2C0F4B110081D0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F2D2C0F4B110081D0A9 /* AppDelegate.swift */; };
 		A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F2F2C0F4B110081D0A9 /* SceneDelegate.swift */; };
 		A0DA1F322C0F4B110081D0A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA1F312C0F4B110081D0A9 /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		A0D27CF92C2AB55800FE5ABE /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
 		A0D27CFB2C2AB57000FE5ABE /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0D27CFD2C2B1FC500FE5ABE /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
+		A0D27D052C2C580100FE5ABE /* TMDBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRequest.swift; sourceTree = "<group>"; };
+		A0D27D072C2C6EDE00FE5ABE /* TrendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendManager.swift; sourceTree = "<group>"; };
 		A0DA1F2A2C0F4B110081D0A9 /* MovieProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DA1F2D2C0F4B110081D0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DA1F2F2C0F4B110081D0A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		A0D27D042C2C57EC00FE5ABE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A0D27D052C2C580100FE5ABE /* TMDBRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		A0DA1F212C0F4B110081D0A9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +140,7 @@
 		A0DA1F2C2C0F4B110081D0A9 /* MovieProject */ = {
 			isa = PBXGroup;
 			children = (
+				A0D27D042C2C57EC00FE5ABE /* Network */,
 				A0D27CCF2C2A1F8600FE5ABE /* Data */,
 				A0DA1F2D2C0F4B110081D0A9 /* AppDelegate.swift */,
 				A0DA1F2F2C0F4B110081D0A9 /* SceneDelegate.swift */,
@@ -165,6 +178,7 @@
 			children = (
 				A0EE56CC2C17574300A5E53B /* TrendViewController.swift */,
 				A0EE56D02C17CB6800A5E53B /* TrendTableViewCell.swift */,
+				A0D27D072C2C6EDE00FE5ABE /* TrendManager.swift */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -288,9 +302,11 @@
 				A0D27CCE2C2A1DE000FE5ABE /* RecommendManager.swift in Sources */,
 				A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */,
 				A0DA1F422C0F4CFB0081D0A9 /* SignUpViewController.swift in Sources */,
+				A0D27D062C2C580100FE5ABE /* TMDBRequest.swift in Sources */,
 				A0DA1F302C0F4B110081D0A9 /* SceneDelegate.swift in Sources */,
 				A0D27CFA2C2AB55800FE5ABE /* RecommendTableViewCell.swift in Sources */,
 				A0EE56BF2C15F5E300A5E53B /* Date+Extension.swift in Sources */,
+				A0D27D082C2C6EDE00FE5ABE /* TrendManager.swift in Sources */,
 				A0D27CD12C2A1F9400FE5ABE /* Movie.swift in Sources */,
 				A0EE56E22C18D5F800A5E53B /* CreditViewController.swift in Sources */,
 			);

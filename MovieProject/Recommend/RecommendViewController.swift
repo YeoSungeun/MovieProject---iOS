@@ -33,53 +33,71 @@ class RecommendViewController: UIViewController {
         
         group.enter()
         DispatchQueue.global().async(group: group) {
-            RecommendManager.shared.recommendationsRequest(id: self.id) { data in
-                var test: [MovieResult] = []
-                if data.count >= 10 {
-                    for i in 0...9 {
-                        test.append(data[i])
-                    }
+            RecommendManager.shared.recommendationsRequest(api: .recommendMovie(id: self.id)) { data, error in
+                // success -> data o([MovieResult]?) , error nil
+                // failure -> data nil, error o(String?)
+                if let error = error {
+                    print("error")
+                    // alert을 띄워줄까?
                 } else {
-                    test = data
+                    guard let data = data else { return }
+                    var test: [MovieResult] = []
+                    if data.count >= 10 {
+                        for i in 0...9 {
+                            test.append(data[i])
+                        }
+                    } else {
+                        test = data
+                    }
+                    self.list.append(test)
+                    print("list2",self.list)
                 }
-                self.list.append(test)
-                print("list2",self.list)
+                group.leave()
+            }
+           
+        }
+        
+        group.enter()
+        DispatchQueue.global().async(group: group) {
+            RecommendManager.shared.recommendationsRequest(api: .similarMovie(id: self.id)) { data, error in
+                if let error = error {
+                    print(error)
+                } else {
+                    guard let data = data else { return }
+                    var test: [MovieResult] = []
+                    if data.count >= 10 {
+                        for i in 0...9 {
+                            test.append(data[i])
+                        }
+                    } else {
+                        test = data
+                    }
+                    self.list.append(test)
+                    print("list3",self.list)
+                }
                 group.leave()
             }
         }
         
         group.enter()
         DispatchQueue.global().async(group: group) {
-            RecommendManager.shared.similarRequest(id: self.id) { data in
-                var test: [MovieResult] = []
-                if data.count >= 10 {
-                    for i in 0...9 {
-                        test.append(data[i])
+            RecommendManager.shared.posterRequest(
+                api: .images(id: self.id)) { data in
+                    var test: [PosterResult] = []
+                    if data.count >= 10 {
+                        for i in 0...9 {
+                            test.append(data[i])
+                        }
+                    } else {
+                        test = data
                     }
-                } else {
-                    test = data
+                    self.posterList.append(test)
+                    print("list3",self.list)
+                    group.leave()
+                } errorHandler: { error in
+                    print(error)
+                    group.leave()
                 }
-                self.list.append(test)
-                print("list3",self.list)
-                group.leave()
-            }
-        }
-        
-        group.enter()
-        DispatchQueue.global().async(group: group) {
-            RecommendManager.shared.posterRequest(id: self.id) { data in
-                var test: [PosterResult] = []
-                if data.count >= 10 {
-                    for i in 0...9 {
-                        test.append(data[i])
-                    }
-                } else {
-                    test = data
-                }
-                self.posterList.append(test)
-                print("list3",self.list)
-                group.leave()
-            }
 
         }
         
@@ -157,7 +175,8 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as! RecommendCollectionViewCell
         if collectionView.tag == 2 {
-            guard let path = posterList[0][indexPath.item].file_path else { return cell }
+            guard let path = posterList[0][indexPath.item].file_path else {
+                return cell }
             let url = URL(string: "https://image.tmdb.org/t/p/original\(path)")
             cell.posterImageView.kf.setImage(with: url)
         } else {

@@ -16,4 +16,6 @@ struct MovieResult: Decodable {
     var title: String
     var poster_path: String?
     
+
+    
 }

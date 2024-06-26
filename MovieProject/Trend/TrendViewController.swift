@@ -20,7 +20,10 @@ class TrendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         callRequestGenre()
-        callRequest()
+        TrendManager.shared.trendRequest(api: .trend(mediaType: .movie)) { data in
+            self.trendList = data
+            self.tableView.reloadData()
+        }
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -57,22 +60,6 @@ class TrendViewController: UIViewController {
                     TrendViewController.genreList.updateValue(item.name, forKey: item.id)
                 }
                 print(TrendViewController.genreList)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-    func callRequest() {
-        let mediaType = MediaType.movie.rawValue
-        let time_window = time_window.day.rawValue
-        let url = "\(APIURL.trendURL)/\(mediaType)/\(time_window)?api_key=\(APIKey.tmdbKey)"
-        
-        AF.request(url, method: .get).responseDecodable(of: Trend.self) { response in
-            switch response.result {
-            case .success(let value):
-                self.trendList = value.results
-                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
