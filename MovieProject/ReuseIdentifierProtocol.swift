@@ -24,6 +24,13 @@ extension UITableViewCell: ReuseIdentifierProtocol {
         return String(describing: self) // 파일명을 문자열로 주기 , self: class의 인스턴스
     }
 }
+extension UITableViewHeaderFooterView: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self) 
+    }
+    
+    
+}
 
 extension UIViewController: ReuseIdentifierProtocol {
     

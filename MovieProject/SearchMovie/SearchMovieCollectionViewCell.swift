@@ -38,9 +38,7 @@ class SearchMovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(data: Result) {
-      
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.poster_path ?? "/lfRkyNbs8cdLAY102Srujj4OWuv.jpg") ")
-        posterView.kf.setImage(with: url)
+        posterView.setImageView(path: data.poster_path ?? "/lfRkyNbs8cdLAY102Srujj4OWuv.jpg")
     }
     
 }

@@ -16,20 +16,27 @@ class TrendViewController: UIViewController {
     
     static var genreList: [Int:String] = [:]
     var trendList: [TrendResult] = []
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequestGenre()
-        TrendManager.shared.trendRequest(api: .trend(mediaType: .movie)) { data in
-            self.trendList = data
+        TrendManager.shared.apiRequest(api: .genre, model: Genres.self) { data in
+            for item in data.genres {
+                TrendViewController.genreList.updateValue(item.name, forKey: item.id)
+            }
+            print(TrendViewController.genreList)
+        }
+        TrendManager.shared.apiRequest(api: .trend(mediaType: .movie), model: Trend.self) { data in
+            self.trendList = data.results
             self.tableView.reloadData()
         }
+        
         configureHierarchy()
         configureLayout()
         configureUI()
         configureTableView()
         
-
+        
     }
     @objc func searchButtonClicked(){
         navigationController?.pushViewController(SearchMovieViewController(), animated: false)
@@ -50,21 +57,6 @@ class TrendViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightItem
     }
     
-    func callRequestGenre() {
-        let url = "https://api.themoviedb.org/3/genre/movie/list?api_key=\(APIKey.tmdbKey)"
-        
-        AF.request(url).responseDecodable(of: Genres.self) { response in
-            switch response.result {
-            case .success(let value):
-                for item in value.genres {
-                    TrendViewController.genreList.updateValue(item.name, forKey: item.id)
-                }
-                print(TrendViewController.genreList)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,6 +73,12 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier, for: indexPath) as! TrendTableViewCell
         
         cell.configureCell(data: trendList[indexPath.row])
+        TrendManager.shared.apiRequest(api: .credit(id: trendList[indexPath.row].id), model: Cast.self) { cast in            var castingText = ""
+            for i in cast.cast {
+                castingText += i.name
+            }
+            cell.castingLabel.text = castingText
+        }
         
         return cell
     }
@@ -90,7 +88,11 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = CreditViewController()
         vc.data = trendList[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        
     }
     
 }

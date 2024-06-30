@@ -15,6 +15,7 @@ class TrendTableViewCell: UITableViewCell {
     let genreLabel = UILabel()
     
     let infoView = UIView()
+    let shadowView = UIView()
     
     let backdropImageView = UIImageView()
     
@@ -28,9 +29,10 @@ class TrendTableViewCell: UITableViewCell {
     let readmoreLabel = UILabel()
     let readmoreIcon = UIImageView()
     
+    var castlist:[CastResult] = []
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -42,7 +44,8 @@ class TrendTableViewCell: UITableViewCell {
     func configureHierarchy() {
         contentView.addSubview(dateLabel)
         contentView.addSubview(genreLabel)
-        contentView.addSubview(infoView)
+        contentView.addSubview(shadowView)
+        shadowView.addSubview(infoView)
         infoView.addSubview(backdropImageView)
         infoView.addSubview(voteAverageView)
         voteAverageView.addSubview(voteTextLabel)
@@ -68,6 +71,9 @@ class TrendTableViewCell: UITableViewCell {
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(20)
             make.height.equalTo(infoView.snp.width)
+        }
+        shadowView.snp.makeConstraints { make in
+            make.edges.equalTo(infoView.snp.edges)
         }
         backdropImageView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(infoView.safeAreaLayoutGuide)
@@ -122,8 +128,13 @@ class TrendTableViewCell: UITableViewCell {
         
         infoView.clipsToBounds = true
         infoView.layer.cornerRadius = 10
-        infoView.layer.borderWidth = 1
+        infoView.layer.borderWidth = 0.5
         infoView.layer.borderColor = UIColor.lightGray.cgColor
+        //MARK: shawdow
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.2
+        shadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
+        shadowView.layer.shadowRadius = 10
         
         voteTextLabel.text = "평점"
         voteTextLabel.textColor = .white
@@ -143,18 +154,17 @@ class TrendTableViewCell: UITableViewCell {
         readmoreLabel.textColor = .darkGray
         readmoreIcon.image = UIImage(systemName: "chevron.right")
         readmoreIcon.tintColor = .black
+        castingLabel.font = .systemFont(ofSize: 13)
+        castingLabel.textColor = .gray
     }
     func configureCell(data: TrendResult) {
         dateLabel.text = data.release_date_string
         genreLabel.text = setGenreString(data: data.genre_ids)
         
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.backdrop_path)")
-        backdropImageView.kf.setImage(with: url)
+        backdropImageView.setImageView(path: data.backdrop_path)
         
         voteAverageLabel.text = data.voteAverageFormat
-        titleLabel.text = data.title
-        
-        
+        titleLabel.text = data.title 
     }
     func setGenreString(data: [Int]) -> String {
         var result = ""

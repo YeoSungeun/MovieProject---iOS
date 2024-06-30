@@ -42,6 +42,7 @@ class RecommendViewController: UIViewController {
                 } else {
                     guard let data = data else { return }
                     var test: [MovieResult] = []
+                
                     if data.count >= 10 {
                         for i in 0...9 {
                             test.append(data[i])
@@ -92,7 +93,7 @@ class RecommendViewController: UIViewController {
                         test = data
                     }
                     self.posterList.append(test)
-                    print("list3",self.list)
+                    print("list3",self.posterList)
                     group.leave()
                 } errorHandler: { error in
                     print(error)
@@ -177,12 +178,10 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         if collectionView.tag == 2 {
             guard let path = posterList[0][indexPath.item].file_path else {
                 return cell }
-            let url = URL(string: "https://image.tmdb.org/t/p/original\(path)")
-            cell.posterImageView.kf.setImage(with: url)
+            cell.posterImageView.setImageView(path: path)
         } else {
             guard let path = list[collectionView.tag][indexPath.item].poster_path else { return cell }
-            let url = URL(string: "https://image.tmdb.org/t/p/original\(path)")
-            cell.posterImageView.kf.setImage(with: url)
+            cell.posterImageView.setImageView(path: path)
         }
         return cell
     }
