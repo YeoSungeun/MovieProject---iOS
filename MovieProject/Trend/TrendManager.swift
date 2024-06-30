@@ -13,18 +13,18 @@ class TrendManager {
     
     private init() { }
     
-    func trendRequest(api: TMDBRequest,completionHanlder: @escaping ([TrendResult]) -> Void) {
+    func apiRequest<T: Decodable>(api: TMDBRequest, model: T.Type, completionHandler: @escaping (T) -> Void) {
         
         AF.request(api.endpoint, 
                    method: api.method,
-                   parameters: api.parameter).responseDecodable(of: Trend.self) { response in
+                   parameters: api.parameter).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let value):
-                completionHanlder(value.results)
+                completionHandler(value)
             case .failure(let error):
                 print(error)
             }
         }
     }
-     
+
 }
