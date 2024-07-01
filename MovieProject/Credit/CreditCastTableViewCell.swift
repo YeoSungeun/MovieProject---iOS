@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CreditCastTableViewCell: UITableViewCell {
+final class CreditCastTableViewCell: UITableViewCell {
     
     let castImageView = UIImageView()
     let nameLabel = UILabel()

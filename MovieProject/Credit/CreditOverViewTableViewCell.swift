@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreditOverViewTableViewCell: UITableViewCell {
+final class CreditOverViewTableViewCell: UITableViewCell {
     
     let overViewLabel = {
         let view = UILabel()
@@ -28,16 +28,16 @@ class CreditOverViewTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(overViewLabel)
     }
-    func configureLayout() {
+    private func configureLayout() {
         overViewLabel.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(20)
             make.bottom.equalTo(contentView.safeAreaLayoutGuide).inset(20)
         }
     }
-    func configureUI() {
+    private func configureUI() {
     }
     func configureCell(data: String) {
         overViewLabel.text = data

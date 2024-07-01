@@ -16,15 +16,15 @@ struct CreditReuslt {
     var overView: String?
     var cast: [CastResult]?
 }
-class CreditViewController: UIViewController {
+final class CreditViewController: UIViewController {
     
-    var data: TrendResult? = nil
+    private var data: TrendResult? = nil
     
-    lazy var detailView = CreditDetailView(data: self.data ?? TrendResult(backdrop_path: "", id: 0, overview: "", poster_path: "", title: "", genre_ids: [0], release_date: "", vote_average: 0))
+    private lazy var detailView = CreditDetailView(data: self.data ?? TrendResult(backdrop_path: "", id: 0, overview: "", poster_path: "", title: "", genre_ids: [0], release_date: "", vote_average: 0))
     
-    lazy var overView: String = data?.overview ?? ""
-    var castList: [CastResult] = []
-    lazy var creditList: [CreditReuslt] = [
+    private lazy var overView: String = data?.overview ?? ""
+    private var castList: [CastResult] = []
+    private lazy var creditList: [CreditReuslt] = [
         CreditReuslt(section: .overView, overView: self.overView),
         CreditReuslt(section: .cast, cast: self.castList)
     ] {
@@ -33,7 +33,7 @@ class CreditViewController: UIViewController {
         }
     }
     
-    lazy var tableView = {
+    private lazy var tableView = {
         let view = UITableView()
         view.delegate = self
         view.dataSource = self
@@ -56,12 +56,12 @@ class CreditViewController: UIViewController {
         configureLayout()
         configureView()
     }
-    func configureHierarchy() {
+    private func configureHierarchy() {
         view.addSubview(detailView)
         view.addSubview(tableView)
         
     }
-    func configureLayout() {
+    private func configureLayout() {
         detailView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(240)
@@ -71,7 +71,7 @@ class CreditViewController: UIViewController {
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    func configureView() {
+    private func configureView() {
         view.backgroundColor = .white
         self.title = "출연/제작"
     }

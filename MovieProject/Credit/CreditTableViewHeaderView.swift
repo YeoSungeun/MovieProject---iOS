@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CreditTableViewHeaderView: UITableViewHeaderFooterView {
+final class CreditTableViewHeaderView: UITableViewHeaderFooterView {
     
     let sectionTitleLabel = {
         let view = UILabel()
@@ -27,10 +27,10 @@ class CreditTableViewHeaderView: UITableViewHeaderFooterView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(sectionTitleLabel)
     }
-    func configureLayout() {
+    private func configureLayout() {
         sectionTitleLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.snp.leading).offset(20)
             make.trailing.bottom.equalTo(self)

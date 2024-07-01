@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-class CreditDetailView: UIView {
+final class CreditDetailView: UIView {
 
-    let backgroundImageView = UIImageView()
-    let titleLabel = UILabel()
-    let posterImageView = UIImageView()
+    private let backgroundImageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let posterImageView = UIImageView()
     
     init(data: TrendResult) {
         super.init(frame: .zero)
@@ -24,12 +24,12 @@ class CreditDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(backgroundImageView)
         addSubview(titleLabel)
         addSubview(posterImageView)
     }
-    func configureLayout() {
+    private func configureLayout() {
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
@@ -44,7 +44,7 @@ class CreditDetailView: UIView {
             make.width.equalTo(posterImageView.snp.height).multipliedBy(0.7)
         }
     }
-    func configureUI(data: TrendResult) {
+    private func configureUI(data: TrendResult) {
         backgroundImageView.setImageView(path: data.backdrop_path)
         titleLabel.text = data.title
         posterImageView.setImageView(path: data.poster_path)

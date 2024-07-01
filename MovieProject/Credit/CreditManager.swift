@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class CreditManager {
+final class CreditManager {
     static let shared = CreditManager()
     
     private init() { }
