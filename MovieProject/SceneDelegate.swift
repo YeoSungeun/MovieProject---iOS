@@ -19,9 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let firstViewController = UINavigationController(rootViewController: TrendViewController())
         let secondViewController = UINavigationController(rootViewController: SearchMovieViewController())
+        let nasaVC = NasaViewcController()
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([firstViewController, secondViewController], animated: true)
+        tabBarController.setViewControllers([firstViewController, secondViewController, nasaVC], animated: true)
     
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
@@ -31,6 +32,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[1].selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
             items[1].image = UIImage(systemName: "magnifyingglass.circle")
             items[1].title = "검색"
+            
+            items[2].image = UIImage(systemName: "star")
         }
         
         tabBarController.tabBar.tintColor = .white
