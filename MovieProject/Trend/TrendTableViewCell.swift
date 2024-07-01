@@ -9,25 +9,25 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class TrendTableViewCell: UITableViewCell {
+final class TrendTableViewCell: UITableViewCell {
 
-    let dateLabel = UILabel()
-    let genreLabel = UILabel()
+    private let dateLabel = UILabel()
+    private let genreLabel = UILabel()
     
-    let infoView = UIView()
-    let shadowView = UIView()
+    private let infoView = UIView()
+    private let shadowView = UIView()
     
-    let backdropImageView = UIImageView()
+    private let backdropImageView = UIImageView()
     
-    let voteAverageView = UIView()
-    let voteTextLabel = UILabel()
-    let voteAverageLabel = UILabel()
+    private let voteAverageView = UIView()
+    private let voteTextLabel = UILabel()
+    private let voteAverageLabel = UILabel()
     
-    let titleLabel = UILabel()
+    private let titleLabel = UILabel()
     let castingLabel = UILabel()
-    let devideView = UIView()
-    let readmoreLabel = UILabel()
-    let readmoreIcon = UIImageView()
+    private let devideView = UIView()
+    private let readmoreLabel = UILabel()
+    private let readmoreIcon = UIImageView()
     
     var castlist:[CastResult] = []
     
@@ -41,7 +41,7 @@ class TrendTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(dateLabel)
         contentView.addSubview(genreLabel)
         contentView.addSubview(shadowView)
@@ -57,7 +57,7 @@ class TrendTableViewCell: UITableViewCell {
         infoView.addSubview(readmoreIcon)
         
     }
-    func configureLayout() {
+    private func configureLayout() {
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
@@ -120,7 +120,7 @@ class TrendTableViewCell: UITableViewCell {
             
         }
     }
-    func configureUI() {
+    private func configureUI() {
         dateLabel.font = .systemFont(ofSize: 12)
         dateLabel.textColor = .lightGray
         

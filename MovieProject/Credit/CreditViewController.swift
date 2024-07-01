@@ -18,7 +18,7 @@ struct CreditReuslt {
 }
 final class CreditViewController: UIViewController {
     
-    private var data: TrendResult? = nil
+    var data: TrendResult? = nil
     
     private lazy var detailView = CreditDetailView(data: self.data ?? TrendResult(backdrop_path: "", id: 0, overview: "", poster_path: "", title: "", genre_ids: [0], release_date: "", vote_average: 0))
     

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class TrendManager {
+final class TrendManager {
     static let shared = TrendManager()
     
     private init() { }

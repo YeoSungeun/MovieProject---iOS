@@ -10,12 +10,12 @@ import Alamofire
 
 
 
-class TrendViewController: UIViewController {
+final class TrendViewController: UIViewController {
     
-    var tableView = UITableView()
+    private var tableView = UITableView()
     
     static var genreList: [Int:String] = [:]
-    var trendList: [TrendResult] = []
+    private var trendList: [TrendResult] = []
     
     
     override func viewDidLoad() {
@@ -41,15 +41,15 @@ class TrendViewController: UIViewController {
     @objc func searchButtonClicked(){
         navigationController?.pushViewController(SearchMovieViewController(), animated: false)
     }
-    func configureHierarchy() {
+    private func configureHierarchy() {
         view.addSubview(tableView)
     }
-    func configureLayout() {
+    private func configureLayout() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    func configureUI() {
+    private func configureUI() {
         view.backgroundColor = .white
         tableView.backgroundColor = .white
         
