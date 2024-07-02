@@ -74,6 +74,13 @@ final class CreditViewController: UIViewController {
     private func configureView() {
         view.backgroundColor = .white
         self.title = "출연/제작"
+        detailView.videoButton.addTarget(self, action: #selector(videoButtonClicked), for: .touchUpInside)
+    }
+    @objc func videoButtonClicked() {
+        let vc = VideoViewController()
+        vc.id = data?.id ?? 0
+        present(vc, animated: true)
+        
     }
 
 }

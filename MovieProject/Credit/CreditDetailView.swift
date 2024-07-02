@@ -13,6 +13,7 @@ final class CreditDetailView: UIView {
     private let backgroundImageView = UIImageView()
     private let titleLabel = UILabel()
     private let posterImageView = UIImageView()
+    let videoButton = UIButton()
     
     init(data: TrendResult) {
         super.init(frame: .zero)
@@ -28,6 +29,7 @@ final class CreditDetailView: UIView {
         addSubview(backgroundImageView)
         addSubview(titleLabel)
         addSubview(posterImageView)
+        addSubview(videoButton)
     }
     private func configureLayout() {
         backgroundImageView.snp.makeConstraints { make in
@@ -43,6 +45,9 @@ final class CreditDetailView: UIView {
             make.bottom.equalTo(self).inset(20)
             make.width.equalTo(posterImageView.snp.height).multipliedBy(0.7)
         }
+        videoButton.snp.makeConstraints { make in
+            make.edges.equalTo(posterImageView)
+        }
     }
     private func configureUI(data: TrendResult) {
         backgroundImageView.setImageView(path: data.backdrop_path)
@@ -55,7 +60,12 @@ final class CreditDetailView: UIView {
         backgroundImageView.contentMode = .scaleAspectFill
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
+        
+        videoButton.backgroundColor = .red
+        
     }
+   
+    
     
 
 }

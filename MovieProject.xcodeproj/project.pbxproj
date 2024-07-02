@@ -11,10 +11,11 @@
 		A02242FA2C31407F00FC3552 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02242F92C31407F00FC3552 /* UIImageView+Extension.swift */; };
 		A02242FC2C31445600FC3552 /* CreditCastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02242FB2C31445600FC3552 /* CreditCastTableViewCell.swift */; };
 		A02242FE2C31446400FC3552 /* CreditOverViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02242FD2C31446400FC3552 /* CreditOverViewTableViewCell.swift */; };
-		A02243002C31B31700FC3552 /* CreditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02242FF2C31B31700FC3552 /* CreditManager.swift */; };
 		A02243022C31C4D800FC3552 /* CreditTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02243012C31C4D800FC3552 /* CreditTableViewHeaderView.swift */; };
 		A02243042C31D66300FC3552 /* CreditDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02243032C31D66300FC3552 /* CreditDetailView.swift */; };
 		A022430A2C32E6CC00FC3552 /* NasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02243092C32E6CC00FC3552 /* NasaViewController.swift */; };
+		A022430C2C3362EB00FC3552 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022430B2C3362EB00FC3552 /* Video.swift */; };
+		A022430F2C3363EC00FC3552 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022430E2C3363EC00FC3552 /* VideoViewController.swift */; };
 		A0D27CCC2C2A1BED00FE5ABE /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CCB2C2A1BED00FE5ABE /* RecommendViewController.swift */; };
 		A0D27CCE2C2A1DE000FE5ABE /* RecommendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CCD2C2A1DE000FE5ABE /* RecommendManager.swift */; };
 		A0D27CD12C2A1F9400FE5ABE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D27CD02C2A1F9400FE5ABE /* Movie.swift */; };
@@ -54,10 +55,11 @@
 		A02242F92C31407F00FC3552 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		A02242FB2C31445600FC3552 /* CreditCastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCastTableViewCell.swift; sourceTree = "<group>"; };
 		A02242FD2C31446400FC3552 /* CreditOverViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditOverViewTableViewCell.swift; sourceTree = "<group>"; };
-		A02242FF2C31B31700FC3552 /* CreditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditManager.swift; sourceTree = "<group>"; };
 		A02243012C31C4D800FC3552 /* CreditTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewHeaderView.swift; sourceTree = "<group>"; };
 		A02243032C31D66300FC3552 /* CreditDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDetailView.swift; sourceTree = "<group>"; };
 		A02243092C32E6CC00FC3552 /* NasaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewController.swift; sourceTree = "<group>"; };
+		A022430B2C3362EB00FC3552 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A022430E2C3363EC00FC3552 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A0D27CCB2C2A1BED00FE5ABE /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		A0D27CCD2C2A1DE000FE5ABE /* RecommendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendManager.swift; sourceTree = "<group>"; };
 		A0D27CD02C2A1F9400FE5ABE /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = NASA;
 			sourceTree = "<group>";
 		};
+		A022430D2C3363D000FC3552 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A022430E2C3363EC00FC3552 /* VideoViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		A0D27CCA2C2A1BCA00FE5ABE /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 				A0D27CD02C2A1F9400FE5ABE /* Movie.swift */,
 				A0D27CFD2C2B1FC500FE5ABE /* Poster.swift */,
 				A00E078F2C313E2000980862 /* Credit.swift */,
+				A022430B2C3362EB00FC3552 /* Video.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -172,6 +183,7 @@
 		A0DA1F2C2C0F4B110081D0A9 /* MovieProject */ = {
 			isa = PBXGroup;
 			children = (
+				A022430D2C3363D000FC3552 /* Video */,
 				A02242F82C31407100FC3552 /* Extension */,
 				A0D27D042C2C57EC00FE5ABE /* Network */,
 				A0D27CCF2C2A1F8600FE5ABE /* Data */,
@@ -218,7 +230,6 @@
 		A0EE56CB2C174CC900A5E53B /* Credit */ = {
 			isa = PBXGroup;
 			children = (
-				A02242FF2C31B31700FC3552 /* CreditManager.swift */,
 				A0EE56E12C18D5F800A5E53B /* CreditViewController.swift */,
 				A02242FB2C31445600FC3552 /* CreditCastTableViewCell.swift */,
 				A02242FD2C31446400FC3552 /* CreditOverViewTableViewCell.swift */,
@@ -321,8 +332,8 @@
 			files = (
 				A0DA1F442C0F4D0E0081D0A9 /* HomeViewController.swift in Sources */,
 				A0EE56E72C18FB8200A5E53B /* SearchMovie.swift in Sources */,
+				A022430F2C3363EC00FC3552 /* VideoViewController.swift in Sources */,
 				A02242FA2C31407F00FC3552 /* UIImageView+Extension.swift in Sources */,
-				A02243002C31B31700FC3552 /* CreditManager.swift in Sources */,
 				A0D27CCC2C2A1BED00FE5ABE /* RecommendViewController.swift in Sources */,
 				A0EE56C12C15FDD700A5E53B /* BoxOfficeTableViewCell.swift in Sources */,
 				A0EE56E92C19033300A5E53B /* SearchMovieCollectionViewCell.swift in Sources */,
@@ -338,6 +349,7 @@
 				A0D27CFE2C2B1FC500FE5ABE /* Poster.swift in Sources */,
 				A0EE56D12C17CB6800A5E53B /* TrendTableViewCell.swift in Sources */,
 				A0D27CCE2C2A1DE000FE5ABE /* RecommendManager.swift in Sources */,
+				A022430C2C3362EB00FC3552 /* Video.swift in Sources */,
 				A02243042C31D66300FC3552 /* CreditDetailView.swift in Sources */,
 				A00E07902C313E2000980862 /* Credit.swift in Sources */,
 				A0EE56C32C15FE1B00A5E53B /* ReuseIdentifierProtocol.swift in Sources */,

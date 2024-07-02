@@ -15,6 +15,7 @@ enum TMDBRequest {
     case trend(mediaType: MediaType)
     case genre
     case credit(id: Int)
+    case video(id: Int)
     
     
     var baseURL: String {
@@ -34,7 +35,10 @@ enum TMDBRequest {
             return URL(string: baseURL + "genre/movie/list?api_key=\(APIKey.tmdbKey)")!
         case .credit(let id):
             return URL(string: baseURL + "movie/\(id)/credits?api_key=\(APIKey.tmdbKey)")!
+        case .video(id: let id):
+            return URL(string: baseURL + "movie/\(id)/videos?api_key=\(APIKey.tmdbKey)")!
         }
+        
    
     }
     var method: HTTPMethod {
@@ -44,7 +48,7 @@ enum TMDBRequest {
         switch self {
         case .recommendMovie, .similarMovie, .trend:
             return ["language": "ko-KR"]
-        case .images, .genre, .credit:
+        case .images, .genre, .credit, .video:
             return ["":""]
         }
     }
